@@ -97,7 +97,7 @@ class Lexer:
             self.position += 2
             return Token(TokenType.OPERATOR, "//", start)
         self.position += 1
-        return Token(TokenType.OPERATOR, self.expression[start:self.position], start)
+        return Token(TokenType.OPERATOR, self.expression[start : self.position], start)
 
     def _read_number(self) -> Token:
         start = self.position

@@ -57,10 +57,10 @@ class Parser:
 
     def _parse_additive(self) -> Node:
         node = self._parse_multiplicative()
-        while (
-            self._current().type == TokenType.OPERATOR
-            and self._current().value in {"+", "-"}
-        ):
+        while self._current().type == TokenType.OPERATOR and self._current().value in {
+            "+",
+            "-",
+        }:
             operator = self._advance().value
             node = BinaryOpNode(operator, node, self._parse_multiplicative())
         return node
@@ -78,10 +78,10 @@ class Parser:
         return node
 
     def _parse_unary(self) -> Node:
-        if (
-            self._current().type == TokenType.OPERATOR
-            and self._current().value in {"+", "-"}
-        ):
+        if self._current().type == TokenType.OPERATOR and self._current().value in {
+            "+",
+            "-",
+        }:
             operator = self._advance().value
             return UnaryOpNode(operator, self._parse_unary())
         return self._parse_power()
