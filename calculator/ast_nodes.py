@@ -5,41 +5,41 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(frozen=True)
 class Node:
     """Base AST node."""
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(frozen=True)
 class NumberNode(Node):
     value: float | int
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(frozen=True)
 class VariableNode(Node):
     name: str
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(frozen=True)
 class UnaryOpNode(Node):
     operator: str
     operand: Node
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(frozen=True)
 class BinaryOpNode(Node):
     operator: str
     left: Node
     right: Node
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(frozen=True)
 class FunctionCallNode(Node):
     name: str
     args: list[Node]
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(frozen=True)
 class AssignmentNode(Node):
     name: str
     value: Node

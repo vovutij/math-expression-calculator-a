@@ -4,14 +4,14 @@ from __future__ import annotations
 
 import math
 from collections.abc import Mapping
-from typing import Literal
+from typing import Literal, Union
 
 from .evaluator import Evaluator
 from .exceptions import EvaluationError, ParseError
 from .parser import Parser
 from .tokenizer import tokenize
 
-Number = float | int
+Number = Union[float, int]
 AngleMode = Literal["rad", "deg"]
 
 

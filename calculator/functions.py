@@ -4,11 +4,12 @@ from __future__ import annotations
 
 import math
 from collections.abc import Callable
-from decimal import Decimal, ROUND_HALF_UP
+from decimal import ROUND_HALF_UP, Decimal
+from typing import Union
 
 from .exceptions import EvaluationError, ParseError
 
-Number = float | int
+Number = Union[float, int]
 Function = Callable[[list[Number], str], Number]
 
 

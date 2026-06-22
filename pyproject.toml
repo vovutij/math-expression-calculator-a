@@ -49,7 +49,7 @@ select = ["E", "F", "I", "B", "UP"]
 ignore = ["UP006", "UP007", "UP045"]
 
 [tool.mypy]
-python_version = "3.9"
+python_version = "3.10"
 strict = true
 warn_unreachable = true
 

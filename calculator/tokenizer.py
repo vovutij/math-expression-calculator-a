@@ -20,7 +20,7 @@ class TokenType(str, Enum):
     EOF = "EOF"
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(frozen=True)
 class Token:
     type: TokenType
     value: str
