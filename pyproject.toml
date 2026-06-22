@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "math-expression-calculator"
+version = "0.1.0"
+description = "Production-ready library for evaluating mathematical expressions from strings."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "VoVuTiJ"}]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+
+[project.optional-dependencies]
+dev = [
+  "bandit",
+  "black",
+  "build",
+  "flake8",
+  "hypothesis",
+  "mypy",
+  "pip-audit",
+  "pytest",
+  "pytest-cov",
+  "ruff",
+  "twine",
+]
+
+[tool.setuptools.packages.find]
+include = ["calculator*"]
+
+[tool.black]
+line-length = 88
+target-version = ["py39"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["UP006", "UP007", "UP045"]
+
+[tool.mypy]
+python_version = "3.9"
+strict = true
+warn_unreachable = true
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
